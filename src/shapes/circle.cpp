@@ -9,6 +9,16 @@
 
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
+double Circle::circumference()
+{
+    return 2*M_PI*radius;
+}
+
+double Circle::area()
+{
+    return M_PI*pow(radius,2);
+}
+
 void Circle::draw()
 {
     std::vector<Point> points;
@@ -18,4 +28,19 @@ void Circle::draw()
         points.push_back(point);
     }
     draw_picture(points);
+}
+
+void Circle::translate(Point T)
+{
+    center = T;
+}
+
+void Circle::resize(double ratio)
+{
+    radius *= ratio;
+}
+
+bool Circle::equals(Circle circle)
+{
+    return radius == circle.radius && centre.x == circle.x && centre.y == circle.y ;
 }
