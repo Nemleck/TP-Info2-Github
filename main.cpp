@@ -2,6 +2,7 @@
 #include "point.hpp"
 #include "shapes.hpp"
 #include <vector>
+#include <iostream>
 
 
 int main() {
@@ -16,8 +17,21 @@ int main() {
 		
 	};
 	
+	Point A(0,0);
+	Point C(200,200);
+	Square S(A, C);
+	std::cout << S.side()<<std::endl;
+	std::cout << S.perimeter()<<std::endl;
+	std::cout << S.area()<<std::endl;
+	
+	Point pt=S.center();
+	std::cout << pt.x <<"  " <<pt.y << std::endl;
+	
+	Point T =
+	
 	// Draw the picture by connecting the points
 	draw_picture(points);
+	S.draw();
 	
 	return 0;
 }
