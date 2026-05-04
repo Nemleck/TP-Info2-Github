@@ -26,4 +26,14 @@ double Triangle::area(){
 Point Triangle::center(){
 	
 	return Point((A.x+B.x+C.x)/3.0, (A.y+B.y+C.y)/3.0);
+	
+}
+
+void translate(Point T){
+	A.x += T.x;
+	A.y += T.y;
+	C.x += T.x;
+	C.y += T.y;
+	B.x += T.x;
+	B.y += T.y;
 }
