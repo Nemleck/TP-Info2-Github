@@ -15,9 +15,12 @@ int main() {
 		Point(0, 0)
 		
 	};
-	
+	Point P(0,0);
+	Point Q(100,0);
+	Point R(50,100);
 	// Draw the picture by connecting the points
 	draw_picture(points);
-	
+	Triangle t(P,Q,R);
+	t.draw();
 	return 0;
 }
