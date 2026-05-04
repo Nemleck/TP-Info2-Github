@@ -3,7 +3,6 @@
 #include "shapes.hpp"
 #include <vector>
 
-
 int main() {
 	
 	// Define points in a vector
@@ -19,8 +18,12 @@ int main() {
 	Point Q(100,0);
 	Point R(50,100);
 	// Draw the picture by connecting the points
-	draw_picture(points);
+	
 	Triangle t(P,Q,R);
 	t.draw();
+	std :: cout << t.perimeter()<< std::endl ;
+	std :: cout << t.area()<< std::endl ;
+	Point pt = t.center();
+	std::cout<<pt.x<<" "<<pt.y<<std::endl;
 	return 0;
 }
