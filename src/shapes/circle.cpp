@@ -1,11 +1,10 @@
-#define _USE_MATH_DEFINES
+
+#define _USE_MATH_DEFINES // pour pi
 
 #include "point.hpp"
 #include "draw.hpp"
 #include "shapes/circle.hpp"
-#include <cmath>
-
-
+#include <cmath> // pour cos et sin
 
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
@@ -32,7 +31,8 @@ void Circle::draw()
 
 void Circle::translate(Point T)
 {
-    center = T;
+    center.x += T.x;
+    center.y += T.y;
 }
 
 void Circle::resize(double ratio)
