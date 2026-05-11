@@ -4,14 +4,15 @@
 #include <vector>
 #include "draw.hpp"
 
+using namespace std;
+
 Square::Square(Point P, Point R) : A(P), C(R) {};
 
 double Square::side(){
 	double side = A.x-C.x;
-	side = std::abs(side);
+	side = abs(side);
 	return side;
 }
-
 
 double Square::perimeter(){
 	return side()*4;
@@ -24,7 +25,6 @@ double Square::area(){
 Point Square::center(){
 	return Point((A.x+C.x)/2,(A.y+C.y)/2);
 }
-
 
 void Square::draw(){
 	Point M = center();
@@ -75,10 +75,10 @@ bool Square::equals(Square square){
 }
 
 Circle Square::inscribedCircle(){
-	 return Circle(center(), side / 2.0);
+	 return Circle(side() / 2.0, center());
 }
 
 Circle Square::circumscribedCircle(){
-    double r = (side * std::sqrt(2.0)) / 2.0;
-    return Circle(center(), r);
+    double r = (side() * std::sqrt(2.0)) / 2.0;
+    return Circle(r, center());
 }
