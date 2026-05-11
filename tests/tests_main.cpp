@@ -39,7 +39,7 @@ void testsTriangle() {
     assert(!t2.isIsoceles());
 
     t1.draw();
-    
+
     Point t2Center = t2.center();
     assert(t2Center.x == 0 && t2Center.y == 0);
 
@@ -75,6 +75,49 @@ void testsTriangle() {
 }
 
 void testsSquare() {
+    Point A(1,1);
+    Point B(-1,-1);
+    Point C(-3,-3);
+
+    Square s1(A,B); // Square centered in (0;0)
+    Square s2(A,C); // Square centered in (-1;-1)
+    assert(s1.side() == 2);
+    assert(s1.perimeter() == 8);
+    assert(s1.area() == 4);
+    
+    Point center1 = s1.center();
+    assert(center1.x == 0 && center1.y == 0);
+
+    s1.draw();
+    s1.translate(A);
+    s1.draw();
+
+    assert(s1.A.x == 2 && s1.A.y == 2);
+    assert(s1.C.x == 0 && s1.C.y == 0);
+    
+    center1 = s1.center();
+    assert(center1.x == 1 && center1.y == 1);
+
+    s1.resize(2);
+    center1 = s1.center();
+    assert(center1.x == 1 && center1.y == 1);
+
+    assert(s1.B.x == -1, s1.B.y == -1)
+    assert(s1.equals(s1));
+    assert(!s1.equals(s2));
+
+    s1.rotate(M_PI/4);
+    s1.draw();
+
+    Circle inscribed = s2.inscribedCircle();
+    assert(inscribed.center.x == -1 && inscribed.center.y == -1);
+    assert(inscribed.radius == 2);
+
+    Circle circumscribed = s2.circumscribedCircle();
+    assert(circumscribed.center.x == -1 && circumscribed.center.y == -1);
+    assert(abs(circumscribed.radius - 2*sqrt(2)) < 0.001);
+
+	std::cout << "Tests of square passed" << std::endl;
 }
 
 void testsCircle() {
