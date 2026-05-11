@@ -50,5 +50,18 @@ int main() {
 	std::cout << "Cercle inscrit -> Rayon: " << inscrit.radius 
           << " | Centre: (" << inscrit.center.x << ", " << inscrit.center.y << ")" 
           << std::endl;
+		  
+		  
+	// 1. Calcul du cercle circonscrit
+	Circle circonscrit = t.circumscribedCircle();
+
+	// 2. Affichage des résultats
+	std::cout << "--- Cercle Circonscrit ---" << std::endl;
+	std::cout << "Rayon : " << circonscrit.radius << std::endl;
+	std::cout << "Centre : (" << circonscrit.center.x << ", " << circonscrit.center.y << ")" << std::endl;
+
+	// 3. Optionnel : dessiner le cercle si la classe Circle a une méthode draw
+	// circonscrit.draw();
 	return 0;
 }
+

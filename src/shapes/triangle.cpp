@@ -112,3 +112,23 @@ Circle Triangle::inscribedCircle(){
     double rayon = area() / (p / 2.0);
     return  Circle(rayon, incentre);
 }
+
+Circle Triangle::circumscribedCircle(){
+    double x1 = A.x, y1 = A.y;
+    double x2 = B.x, y2 = B.y;
+    double x3 = C.x, y3 = C.y;
+
+    // Calcul du dénominateur D
+    double D = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
+
+    // Calcul des coordonnées du centre
+    double ux = ((x1 * x1 + y1 * y1) * (y2 - y3) + (x2 * x2 + y2 * y2) * (y3 - y1) + (x3 * x3 + y3 * y3) * (y1 - y2)) / D;
+    double uy = ((x1 * x1 + y1 * y1) * (x3 - x2) + (x2 * x2 + y2 * y2) * (x1 - x3) + (x3 * x3 + y3 * y3) * (x2 - x1)) / D;
+    
+    Point centre(ux, uy);
+
+    // Le rayon est la distance entre le centre et le point A
+    double r = dist(centre, A);
+
+    return Circle(r,centre);
+}
