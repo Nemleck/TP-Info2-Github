@@ -8,12 +8,16 @@
 
 ## Utilisation
 
-> Ce programme n'inclut pas d'interface utilisateur : Vous pouvez modifier le main pour utiliser les différentes structures comme souhaité, puis le compiler via la commande `g++ -std=c++23 -Iinclude -o main src/*.cpp src/shapes/*.cpp main.cpp -lgdi32 -luser32` et enfin le lancer via la commande `./main`.
+> Ce programme n'inclut pas d'interface utilisateur : Vous pouvez modifier le main pour utiliser les différentes structures comme souhaité.
+
+> Sur un terminal, vous pouvez ensuite le compiler via la commande `make` sur Windows ou `g++ -std=c++23 -Iinclude -o main src/*.cpp src/shapes/*.cpp tests/*.cpp main.cpp -lgdi32 -luser32` si make n'est pas installé.
+
+> Vous pouvez enfin le lancer via la commande `./main`.
 
 ## Installation
 
 > Il est possible de télécharger ce programme via github ou avec la commande :
-> `https://github.com/Nemleck/TP-Info2-Github`
+> `git clone https://github.com/Nemleck/TP-Info2-Github`
 
 > Il est ensuite utilisable tel quel dans n'importe quel répertoire
 
