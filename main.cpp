@@ -9,6 +9,5 @@ int main() {
 	testsTriangle();
 	testsSquare();
 	testsCircle();
-
 	return 0;
 }
