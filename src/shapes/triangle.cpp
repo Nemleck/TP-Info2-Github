@@ -4,6 +4,7 @@
 #include "draw.hpp"
 #include <cmath>
 #include <iostream>
+
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {}
 
 void Triangle::draw() {

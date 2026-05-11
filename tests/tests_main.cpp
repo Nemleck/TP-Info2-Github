@@ -2,8 +2,12 @@
 #include "point.hpp"
 #include "shapes.hpp"
 #include "tests_main.hpp"
+
 #include <vector>
+
+#define NDEBUG
 #include <cassert>
+#include <iostream>
 
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -65,7 +69,7 @@ void testsTriangle() {
     assert(t1.equals(t1));
 
     Circle inscribed = t3.inscribedCircle();
-    assert(inscribed.center.x == 0 && abs(inscribed.center.y - 0.58) < 0.01)
+    assert(inscribed.center.x == 0 && abs(inscribed.center.y - 0.58) < 0.01);
 
     Circle circumscribed = t1.circumscribedCircle();
     assert(circumscribed.center.x == 2.5 && circumscribed.center.y == 4);
@@ -102,7 +106,7 @@ void testsSquare() {
     center1 = s1.center();
     assert(center1.x == 1 && center1.y == 1);
 
-    assert(s1.B.x == -1, s1.B.y == -1)
+    assert(s1.B.x == -1 && s1.B.y == -1);
     assert(s1.equals(s1));
     assert(!s1.equals(s2));
 

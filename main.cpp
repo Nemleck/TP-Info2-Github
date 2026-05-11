@@ -4,6 +4,7 @@
 #include "point.hpp"
 #include "shapes.hpp"
 #include <vector>
+#include <iostream>
 
 #include "tests/tests_main.hpp"
 
