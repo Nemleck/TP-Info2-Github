@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+
 #include "draw.hpp"
 #include "point.hpp"
 #include "shapes.hpp"
@@ -9,5 +11,4 @@ int main() {
 	testsTriangle();
 	testsSquare();
 	testsCircle();
-	return 0;
 }
