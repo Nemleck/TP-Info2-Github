@@ -79,5 +79,5 @@ Checks if the current circle is equal to another (same center point and same rad
 */
 bool Circle::equals(Circle circle)
 {
-    return radius == circle.radius && centre.x == circle.x && centre.y == circle.y ;
+    return radius == circle.radius && center.x == circle.center.x && center.y == circle.center.y ;
 }
