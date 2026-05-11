@@ -2,28 +2,53 @@
 #include "point.hpp"
 #include "shapes.hpp"
 #include <vector>
+#include <iostream>
 
 int main() {
 	
 	// Define points in a vector
-	std::vector<Point> points = {
-		Point(0, 0),
-		Point(100, 0),
-		Point(100, 100),
-		Point(0, 100),
-		Point(0, 0)
-		
-	};
-	Point P(0,0);
-	Point Q(100,0);
-	Point R(50,100);
+	Point A(0,0);
+	Point B(100,0);
+	Point C(50,100);
 	// Draw the picture by connecting the points
 	
-	Triangle t(P,Q,R);
+	Triangle t(A,B,C);
+	Triangle t2(A,B,C);
 	t.draw();
-	std :: cout << t.perimeter()<< std::endl ;
-	std :: cout << t.area()<< std::endl ;
+	if (t.equals(t2)) {
+        std::cout << "REUSSI : t est bien egal a t2." << std::endl;
+    }
+	std::cout << t.perimeter()<< std::endl ;
+	std::cout << t.area()<< std::endl ;
 	Point pt = t.center();
 	std::cout<<pt.x<<" "<<pt.y<<std::endl;
+	Point vecteur(30, 60);
+	t.translate(vecteur); // Déplace le triangle
+	t.draw();             // Dessine le triangle déplacé
+	t.resize(2.0);
+	t.draw();
+	if (t.isEquilateral()) {
+        std::cout << "Le triangle est equi." << std::endl;
+    }
+	
+	if (t.isIsoceles()) {
+        std::cout << "Le triangle est iso." << std::endl;
+    }
+	
+	t.rotate(1.57);
+	t.draw();
+	
+	
+	
+	if (t.isRightAngled()) {
+        std::cout << "Le triangle est rectangle." << std::endl;
+    }
+	
+	Circle inscrit = t.inscribedCircle();
+
+	// On affiche les valeurs numériques du cercle
+	std::cout << "Cercle inscrit -> Rayon: " << inscrit.radius 
+          << " | Centre: (" << inscrit.center.x << ", " << inscrit.center.y << ")" 
+          << std::endl;
 	return 0;
 }
