@@ -38,6 +38,8 @@ void testsTriangle() {
     assert(t1.isRightAngled());
     assert(!t2.isIsoceles());
 
+    t1.draw();
+    
     Point t2Center = t2.center();
     assert(t2Center.x == 0 && t2Center.y == 0);
 
@@ -55,6 +57,8 @@ void testsTriangle() {
     assert(t1Center.x == 0 && t1Center.y == 0);
     assert(t1.A.x == 4 && t1.A.y == 6);
 
+    t1.draw();
+
     assert(!t2.equals(t1));
     assert(!t3.equals(t1));
     assert(t3.equals(t3));
@@ -66,10 +70,33 @@ void testsTriangle() {
     Circle circumscribed = t1.circumscribedCircle();
     assert(circumscribed.center.x == 2.5 && circumscribed.center.y == 4);
     assert(circumscribed.radius == 2.5);
+	
+    std::cout << "Tests of triangle passed" << std::endl;
 }
 
 void testsSquare() {
 }
 
 void testsCircle() {
+    Circle c0 = Circle(100,Point(0,0));
+	Circle c1 = Circle(100,Point(0,0));
+	Circle c2 = Circle(100,Point(50,50));
+	Circle c3 = Circle(50,Point(50,50));
+	Point vector = Point(50,50);
+	double ratio = 0.5;
+    
+	c0.draw();
+	c1.draw();
+	c2.draw();
+	c3.draw();
+	
+    assert(c0.circumference()==400*M_PI);
+	assert(c0.area()==40000*M_PI);
+	assert(c0.equals(c1));
+	c0.translate(vector);
+	assert(c0.equals(c2));
+	c0.resize(ratio);
+	assert(c0.equals(c3));
+
+	std::cout << "Tests of circle passed" << std::endl;
 }
